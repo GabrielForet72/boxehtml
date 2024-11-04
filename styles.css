@@ -1,0 +1,467 @@
+/* Variables pour les couleurs récurrentes */
+:root {
+    --main-color: #ea9f05;
+    --text-color: #333;
+    --background-color: #f8f8f8;
+    --dark-background: #333333;
+}
+
+/* Reset et global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Centrage et limite de largeur pour le contenu principal */
+.catalog, .banner, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-image: url('/Medias/images/background.jpg');
+    background-position: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Slogan */
+.slogan {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.slogan .part1 {
+    color: var(--main-color);
+}
+
+.slogan .part2 {
+    color: #000000ca;
+}
+
+/* Conteneur du message personnalisé */
+.user-info {
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    text-align: right;
+    min-height: 40px;
+    line-height: 40px;
+}
+
+/* Animation au survol */
+.user-info:hover span {
+    animation: explode 0.6s ease forwards;
+}
+
+.user-info span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Keyframes */
+@keyframes explode {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50px, -50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Menu aligné sous "Bonjour Gabriel" */
+.user-info-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 20;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-left: 20px;
+}
+
+.menu ul li:first-child {
+    margin-left: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+    padding: 5px;
+}
+
+.menu ul li a:hover {
+    transform: scale(1.3);
+}
+
+/* Menu du header */
+.menu ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Effet de survol */
+.menu ul li a:hover {
+    background-color: #ea9f05;
+    color: #fff;
+}
+
+/* Section Banner */
+.banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Product Catalog */
+.catalog {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px;
+    background-color: #f8f8f8;
+}
+
+.product {
+    position: relative;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+    position: relative;
+}
+
+.product img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+/* Nom du produit */
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ea9f05;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 24px;
+    border-radius: 10px;
+    z-index: 10;
+    display: block;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.price {
+    margin-left: auto;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.price .old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.price .new-price {
+    color: #ea9f05;
+    font-weight: bold;
+}
+
+/* Bouton "Voir la vente" */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Menu du footer */
+.footer-menu ul {
+    position: relative;
+    top: -21px;
+    z-index: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.footer-menu ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.footer-menu ul li::after {
+    content: "●";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #ccc;
+}
+
+.footer-menu ul li:last-child::after {
+    content: "";
+}
+
+.footer-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Espace entre le menu et les icônes */
+.footer-menu {
+    margin-bottom: 30px;
+}
+
+/* Icônes et descriptions */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.icon {
+    text-align: center;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+    background-color: #ea9f05;
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* Réseaux sociaux */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    margin: 0 20px;
+}
+
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* Mentions légales */
+.footer-legal {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-legal p {
+    margin: 0;
+}
+
+/* Media Queries */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 0 10px;
+    }
+    
+    .menu ul li {
+        margin-left: 15px;
+    }
+
+    .catalog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .footer-menu ul {
+        width: 70%;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu ul li a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .user-info {
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .catalog {
+        grid-template-columns: 1fr; 
+        padding: 40px;
+    }
+
+    .footer-menu ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .footer-menu ul li {
+        margin: 10px;
+    }
+
+    .footer-menu ul li a {
+        font-size: 12px;
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+    .footer-menu {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    footer {
+        padding-top: 5px; 
+    }
+    
+    .social-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
