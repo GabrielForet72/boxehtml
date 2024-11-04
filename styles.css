@@ -6,7 +6,7 @@
     --dark-background: #333333;
 }
 
-/* Reset et global */
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -64,7 +64,7 @@ header {
     color: #000000ca;
 }
 
-/* Conteneur du message personnalisé */
+/* Conteneur du message perso */
 .user-info {
     font-weight: bold;
     font-size: 18px;
@@ -87,7 +87,7 @@ header {
     transition: transform 0.3s ease;
 }
 
-/* Keyframes */
+/* Keyframes message perso */
 @keyframes explode {
     0% {
         transform: translate(0, 0);
@@ -99,7 +99,7 @@ header {
     }
 }
 
-/* Menu aligné sous "Bonjour Gabriel" */
+/* Menu aligné sous message perso */
 .user-info-menu {
     display: flex;
     flex-direction: column;
@@ -147,7 +147,7 @@ header {
     color: #fff;
 }
 
-/* Section Banner */
+/* Section Bannière */
 .banner {
     width: 100%;
     max-width: 1200px;
@@ -162,7 +162,7 @@ header {
     object-fit: cover;
 }
 
-/* Product Catalog */
+/* Produit et catalogue */
 .catalog {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
