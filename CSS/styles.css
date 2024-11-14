@@ -6,7 +6,7 @@
     --dark-background: #333333;
 }
 
-/* Global */
+/* Reset et global */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
 /* Header */
 header {
     width: 100%;
-    background-image: url('background.jpg');
+    background-image: url('/Medias/images/background.jpg');
     background-position: center;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -64,7 +64,7 @@ header {
     color: #000000ca;
 }
 
-/* Conteneur du message perso */
+/* Conteneur du message personnalisé */
 .user-info {
     font-weight: bold;
     font-size: 18px;
@@ -87,7 +87,7 @@ header {
     transition: transform 0.3s ease;
 }
 
-/* Keyframes message perso */
+/* Keyframes */
 @keyframes explode {
     0% {
         transform: translate(0, 0);
@@ -99,7 +99,7 @@ header {
     }
 }
 
-/* Menu aligné sous message perso */
+/* Menu aligné sous "Bonjour Gabriel" */
 .user-info-menu {
     display: flex;
     flex-direction: column;
@@ -147,7 +147,7 @@ header {
     color: #fff;
 }
 
-/* Section Bannière */
+/* Section Banner */
 .banner {
     width: 100%;
     max-width: 1200px;
@@ -162,7 +162,7 @@ header {
     object-fit: cover;
 }
 
-/* Produit et catalogue */
+/* Product Catalog */
 .catalog {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
@@ -408,7 +408,7 @@ footer {
     }
 
     .menu ul li a {
-        font-size: 18px;
+        font-size: 14px;
         padding: 5px 8px;
     }
 
